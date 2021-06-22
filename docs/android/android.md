@@ -1,9 +1,9 @@
 ---
 layout: default
-title: LeetCode
-nav_order: 5
+title: Android
+nav_order: 2
 has_children: true
-permalink: /docs/leetcode
+permalink: /docs/android
 ---
 
 # LeetCode
