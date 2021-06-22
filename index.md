@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 主页
+title: 推荐
 nav_order: 1
 description: "推荐页"
 ---

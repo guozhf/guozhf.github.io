@@ -17,8 +17,8 @@
 title: 朝花夕拾
 description: 一个系统的知识框架
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://guozhf.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-# url: ""
+# url: "https://guozhf.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: ""
 
 permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"
@@ -32,7 +32,7 @@ exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "pac
 # include: ["docs/tests/"]
 
 # Set a path/url to a logo that will be displayed instead of the title
-#logo: "/assets/images/just-the-docs.png"
+# logo: "/assets/images/chimpanzee.png"
 
 # Enable or disable the site search
 # Supports true (default) or false
