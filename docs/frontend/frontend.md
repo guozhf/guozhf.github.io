@@ -1,9 +1,9 @@
 ---
 layout: default
-title: LeetCode
-nav_order: 6
+title: 前端
+nav_order: 5
 has_children: true
-permalink: /docs/leetcode
+permalink: /docs/front
 ---
 
 # LeetCode
