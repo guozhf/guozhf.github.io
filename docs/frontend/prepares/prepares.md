@@ -72,3 +72,6 @@ console.log(3)
 当定时器线程计时完成后，会将回调函数放入**任务队列**中，这些任务加入到任务队列中以后不会立即执行，而是处于等待轧辊台，等到主线程处理完了自己的事情后，才会执行任务队列中的任务。未完待续。。。
 
 https://juejin.cn/post/6844904159385223175
+
+
+http://www.ruanyifeng.com/blog/2012/12/asynchronous%EF%BC%BFjavascript.html 实现异步的四种方法。
