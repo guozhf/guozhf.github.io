@@ -27,3 +27,39 @@ yarn是和npm一样的包管理器
 
 可以说： Gradle = npm + webpack
 就了解这么多就行了。
+
+# javascript如何实现的异步
+JavaScript本身是单线程的，从语言层面上讲谈不上异步，实现异步的是其它一些基础设施，例如setTimeout，setInterval。在web范畴内有XHR的onreadystatchange，dom事件，html5里的background worker等等，放大nodejs范畴内则有其它API做了异步，放到其它JS运行环境则可以有其它异步机制。
+
+或者可以这样简单的理解，异步都是靠native提供的，封装成了js可用的API，你没法通过这些API以外的方式自己实现异步操作。
+JavaScript是轻量级的脚本语言，也是"嵌入式"的语言，可以嵌入到其它环境内部，JavaScript本身是单线程的，不可能实现异步，而它所嵌入的环境却可以实现异步，比如浏览器或者node中，然后这些环境将异步操作封装成了js可用的API，看起来好像是js实现了异步，实际上并不是。JavaScript线程会同步的执行代码，当遇到异步操作的时候，它会发送
+一个异步请求给异步API，而这个异步API由其环境来实现，这个环境可以是多线程的。然后JavaScript并不能异步的结果，而是继续执行下面的代码.当异步任务结束后，就会将回调加入到queque(队列)中，当JavaScript代码执行完毕以后，就会通过Event Loop(事件循环)去读取队列中的回调函数，并且执行。对于JavaScript代码来说，看起来一直是同步的。这里需要注意，是JavaScript将所有同步代码执行完，才会去执行消息队列里的回调函数，所以回调函数总是在最后调用的。
+
+代码实验：
+```javascript
+
+function timeout() {
+    setTimeout(() => {
+        console.log('timeout')
+    }, 0)
+}
+
+function someTime() {
+    let s = Date.now()
+    while(true) {
+        if (Date.now() - s > 2000) {
+            console.log('some time')
+            break
+        }
+    }
+}
+console.log(1)
+timeout()
+someTime()
+console.log(3)
+
+// 执行结果 1 - some time - 3 - timeout，印证了我们上面的观点
+```
+
+我们已经指导了JavaScript是脚本语言，它需要"嵌入"到一个环境中去运行，我们称这个环境为宿主环境，对于前端开发而言，这个宿主环境显然就是浏览器！
+虽说JavaScript是单线程的，然后浏览器却不是
