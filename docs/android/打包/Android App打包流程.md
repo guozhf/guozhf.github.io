@@ -2,7 +2,7 @@
 layout: default
 title: Android App打包流程
 parent: Android
-has_children: true
+has_children: false
 nav_order: 1
 ---
 
@@ -11,7 +11,7 @@ nav_order: 1
 一图胜千言，Android官方给出的这张App 打包流程图，完整的描绘了打包的整个过程，其中方形的为App中的代码，第三方库代码和资源等，椭圆形为打包过程中使用到的工具。我们从上到下，大体的介绍下打包的整个流程。
 
 ## 1. 打包资源文件，生成R.java
-图上的第一步，Application Resources(应用资源) 通过sdk提供的aapt(Android Asset Packaing Tool) Android资源打包工具生成了R.java。其中应用资源主要是指res下的资源和AndroidManifes文件，他们会被编译成二进制文件，并被分配一个resource id，应用通过resource id来访问相应的资源。
+图上的第一步，Application Resources(应用资源) 通过sdk提供的aapt(Android Asset Packaing Tool) Android资源打包工具生成了R.java。其中应用资源(图片除外)主要是指res下的资源和AndroidManifes文件，他们会被编译成二进制文件，并被分配一个resource id，应用通过resource id来访问相应的资源，如R.string.xxx.
 Android应用在编译过程中aapt工具会对资源文件进行编译，还会生成一个resource.arsc文件，resource.arsc文件相当于一个文件索引表，记录了很多跟资源相关的信息。
 
 ## 2. 处理aidl文件，生成相应的Java文件
