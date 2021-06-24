@@ -18,4 +18,12 @@ NPM的思路大概是这样的：
 
 这些可以被使用的代码被叫做包(package)或者库，这就是NPM名字的又来：Node Package Manager。
 
+package.json用来配置依赖等，node_modules用来存放依赖的包。
+
 yarn是和npm一样的包管理器
+
+# webpack
+本质上，webpack 是一个用于现代 JavaScript 应用程序的 静态模块打包工具。当 webpack 处理应用程序时，它会在内部构建一个 依赖图(dependency graph)，此依赖图对应映射到项目所需的每个模块，并生成一个或多个 bundle。作用类似于Gradle，但是它只负责打包，不负责管理依赖，而Gradle除了负责打包以外，还间接通过Maven等仓库来管理依赖。
+
+可以说： Gradle = npm + webpack
+就了解这么多就行了。
