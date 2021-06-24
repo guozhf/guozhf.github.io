@@ -62,4 +62,13 @@ console.log(3)
 ```
 
 我们已经指导了JavaScript是脚本语言，它需要"嵌入"到一个环境中去运行，我们称这个环境为宿主环境，对于前端开发而言，这个宿主环境显然就是浏览器！
-虽说JavaScript是单线程的，然后浏览器却不是
+虽说JavaScript是单线程的，然后浏览器却不是!
+
+![Alt text](https://github.com/guozhf/guozhf.github.io/blob/master/assets/images/browser.jpg?raw=true)
+
+如图所示，JavaScript引擎线程称为主线程，它负责解析JavaScript代码；其它可以称为辅助线程，这些辅助线程便是JavaScript实现异步的关键。
+
+上边例子中，主线程负责自上而下顺序执行，当遇到setTimeout函数后，便将其交给定时器线程去执行，自己继续执行下面的代码，从而达到异步的目的。
+当定时器线程计时完成后，会将回调函数放入**任务队列**中，这些任务加入到任务队列中以后不会立即执行，而是处于等待轧辊台，等到主线程处理完了自己的事情后，才会执行任务队列中的任务。未完待续。。。
+
+https://juejin.cn/post/6844904159385223175
